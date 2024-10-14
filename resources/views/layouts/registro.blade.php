@@ -21,20 +21,20 @@
                         <p class="text-center"><strong>Regístrate con tus datos:</strong></p>
       
                         <div class="form-outline mb-4">
-                          <label class="form-label" for="inputCurp">CURP:</label>
-                          <input type="text" name="curp" id="inputCurp" value="{{ old('curp') }}" class="form-control"
+                          <label class="form-label" for="correo">Correo:</label>
+                          <input type="email" name="correo" id="correo" value="{{ old('correo') }}" class="form-control"
                             placeholder="" />
-                            @error('curp')
+                            @error('correo')
                             <p class="text-danger">{{ $message }}</p>
                             @enderror
                           
                         </div>
       
                         <div class="form-outline mb-4">
-                          <label class="form-label" for="inputCorreo">CORREO:</label>
-                          <input type="email" name="correo" id="inputCorreo" value="{{ old('correo') }}" class="form-control" 
+                          <label class="form-label" for="contraseña">Contraseña:</label>
+                          <input type="password" name="contraseña" id="contraseña" value="{{ old('contraseña') }}" class="form-control" maxlength="8"
                             placeholder=""/>
-                            @error('correo')
+                            @error('contraseña')
                             <p class="text-danger">{{ $message }}</p>
                             @enderror
                           

@@ -10,6 +10,9 @@
     <title>@yield('title')</title>
     <!-- Bootstrap CSS v5.2.1 -->
     <script src="{{ asset('assets/js/estados.js')}}"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" media="all" href="{{ asset('assets/styles.css')}}">
@@ -32,7 +35,7 @@
 <header class="top-header">
     <nav class="navbar header-nav navbar-expand-lg">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{ route('inicio') }}"><img src="{{ asset('assets/images/logo-itabec.png')}}" class="img-responsive" alt="img_logoitabec"></a>
+            <a class="navbar-brand" href="{{ route('inicioadmin') }}"><img src="{{ asset('assets/images/logo-itabec.png')}}" class="img-responsive" alt="img_logoitabec"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-wd" aria-controls="navbar-wd" aria-expanded="false" aria-label="Toggle navigation">
                 <span></span>
                 <span></span>
@@ -40,21 +43,18 @@
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
                 <ul class="navbar-nav">
-                    <li><a class="nav-link active" href="{{ route('inicio') }}">INICIO</a></li>
-                    <li><a class="nav-link" href="{{ route('bitacoras') }}">VER REGISTROS</a></li>
-                    <li><a class="nav-link" href="{{ route('noticias') }}">NOTICIAS</a></li>
+                    <li><a class="nav-link active" href="{{ route('inicioadmin') }}">Inicio</a></li>
+                    <li><a class="nav-link" href="">Ver evidencias</a></li>
+                    <li><a class="nav-link" href="">Publicaciones</a></li>
+                    <li><a class="nav-link" href="">Elementos de Control</a></li>
+                    <li><a class="nav-link" href="">Notificaciones</a></li>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
                     </form>
-                    <li><a href="#" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar Sesión</a></li>
+                    <li class="nav-item logout-button"><a href="#" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar Sesión</a></li>
                 </ul>
             </div>
-            <div class="search-box">
-                <input type="text" class="search-txt" placeholder="Buscar....">
-                <a class="search-btn">
-                    <img src="{{ asset('assets/images/search_icon.png')}}" class="img-responsive" alt="search_icon" />
-                </a>
-            </div>
+            
         </div>
     </nav>
 </header>
@@ -81,10 +81,12 @@
                <div class="footer_blog footer_menu white_fonts">
                         <h3>Menú</h3>
                         <ul> 
-                          <li><a href="{{ route('inicio') }}">> Inicio</a></li>
-                          <li><a href="#">> Acerca de</a></li>
-                          <li><a href="{{ route('noticias') }}">> Noticias</a></li>
-                        </ul>
+                            <li><a href="{{ route('inicioadmin') }}">> Inicio</a></li>
+                            <li><a href="#">> Ver evidencias</a></li>
+                            <li><a href="#">> Publicaciones</a></li>
+                            <li><a href="#">> Elementos de control</a></li>
+                            <li><a href="#">> Notificaciones</a></li>
+                          </ul>
                      </div>
              </div>
              

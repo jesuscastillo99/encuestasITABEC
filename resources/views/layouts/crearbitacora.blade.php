@@ -1,5 +1,5 @@
 @extends('layouts.landingsinslider')
-@section('title', 'Bitacoras')
+@section('title', 'CrearBitacoras')
 @section('content')
 <div class="container">
     <h1 class="my-4">Subir nueva Bitácora</h1>
@@ -61,7 +61,7 @@
         </div>
 
         <div class="form-group">
-            <label for="observaciones">Responsable</label>
+            <label for="responsable">Responsable</label>
             <input type="text" class="form-control" name="responsable" id="responsable">
         </div>
 

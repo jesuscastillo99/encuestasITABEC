@@ -28,29 +28,22 @@
 <header class="top-header">
     <nav class="navbar header-nav navbar-expand-lg">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{ route('inicio') }}"><img src="{{ asset('assets/images/logo-itabec.png')}}" class="img-responsive" alt="img_logoitabec"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-wd" aria-controls="navbar-wd" aria-expanded="false" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <a class="navbar-brand" href="{{ route('inicioadmin') }}"><img src="{{ asset('assets/images/logo-itabec.png')}}" class="img-responsive" alt="img_logoitabec"></a>
+            
             <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
                 <ul class="navbar-nav">
-                    <li><a class="nav-link active" href="{{ route('inicio') }}">INICIO</a></li>
-                    <li><a class="nav-link" href="{{ route('bitacoras') }}">VER REGISTROS</a></li>
-                    <li><a class="nav-link" href="{{ route('noticias') }}">NOTICIAS</a></li>
+                    <li><a class="nav-link active" href="{{ route('inicioadmin') }}">Inicio</a></li>
+                    <li><a class="nav-link" href="">Ver evidencias</a></li>
+                    <li><a class="nav-link" href="">Publicaciones</a></li>
+                    <li><a class="nav-link" href="">Elementos de Control</a></li>
+                    <li><a class="nav-link" href="">Notificaciones</a></li>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
                     </form>
-                    <li><a href="#" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar Sesión</a></li>
+                    <li class="nav-item logout-button"><a href="#" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar Sesión</a></li>
                 </ul>
             </div>
-            <div class="search-box">
-                <input type="text" class="search-txt" placeholder="Buscar....">
-                <a class="search-btn">
-                    <img src="{{ asset('assets/images/search_icon.png')}}" class="img-responsive" alt="search_icon" />
-                </a>
-            </div>
+            
         </div>
     </nav>
 </header>
@@ -60,7 +53,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="pogoSlider" id="js-main-slider">
-                <div class="pogoSlider-slide" style="background-image:url({{ asset('assets/images/fondoTam.png')}});">
+                <div class="pogoSlider-slide img-responsive" style="background-image:url({{ asset('assets/images/fondoTam.png')}});">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12">
@@ -110,9 +103,11 @@
                <div class="footer_blog footer_menu white_fonts">
                         <h3>Menú</h3>
                         <ul> 
-                          <li><a href="{{ route('inicio') }}">> Inicio</a></li>
-                          <li><a href="#">> Acerca de</a></li>
-                          <li><a href="{{ route('login') }}">> Noticias</a></li>
+                          <li><a href="{{ route('inicioadmin') }}">> Inicio</a></li>
+                          <li><a href="#">> Ver evidencias</a></li>
+                          <li><a href="#">> Publicaciones</a></li>
+                          <li><a href="#">> Elementos de control</a></li>
+                          <li><a href="#">> Notificaciones</a></li>
                         </ul>
                      </div>
              </div>

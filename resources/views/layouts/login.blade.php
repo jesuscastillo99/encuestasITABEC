@@ -15,16 +15,16 @@
                       <div class="text-center">
                         <img src="{{ asset('assets/images/logo-itabec.png')}}"
                            alt="logo-itabec" class="img-responsive" id="img-logo">
-                        <h2 class="mt-5 mb-5 pb-1 titulo-login">Bienvenido al Sistema de Registros de Soporte Técnico</h2>
+                        <h2 class="mt-5 mb-5 pb-1 titulo-login">Bienvenido al Sistema de Encuestas</h2>
                       </div>
                       
                       <form method="POST" action="{{ route('login') }}">
                         @csrf
-                        <p class="text-center"><strong>Por favor inicia sesión con tus datos:</strong></p>
+                        <p class="text-center"><strong>Por favor regístrate con tus datos:</strong></p>
       
                         <div class="form-outline mb-4">
-                          <label class="form-label" for="inputCurp">CURP:</label>
-                          <input type="text" name="curp" id="inputCurp" value="{{ old('curp') }}" class="form-control"
+                          <label class="form-label" for="curp">CURP:</label>
+                          <input type="text" name="curp" id="curp" value="{{ old('curp') }}" class="form-control" required minlength="18"
                             placeholder="" />
                             @error('curp')
                             <p class="text-danger">{{ $message }}</p>
@@ -33,25 +33,19 @@
                         </div>
       
                         <div class="form-outline mb-4">
-                          <label class="form-label" for="inputCorreo">CORREO:</label>
-                          <input type="email" name="correo" id="inputCorreo" value="{{ old('correo') }}" class="form-control" 
-                            placeholder=""/>
-                            @error('correo')
-                            <p class="text-danger">{{ $message }}</p>
-                            @enderror
+                          <label class="form-label" for="programa">Seleccione el programa:</label>
+                          <select class="form-control" id="programa" name="programa" required>
+                            <option value="1">AVANZA</option>
+                            <option value="2" >FUTURO</option>
+                            <option value="3" >ESPERANZA</option>
+                          </select>
                           
                         </div>
 
-                        <div class="text-center pt-1 mb-5 pb-1">
-                          <a class="text-muted" href="#">¿Has olvidado tu contraseña?</a>
-                          <button class="fill rounded mt-2" type="submit">INICIAR SESIÓN</button>
-                          
+                        <div class="text-center pt-1 mb-2 pb-1">
+                          <button class="fill rounded mt-2" type="submit">COMPLETAR REGISTRO</button>                  
                         </div>
-      
-                        <div class="d-flex align-items-center justify-content-center pb-4">
-                          <p class="mb-0 me-2">¿No tienes cuenta?</p>
-                          <button class="fill rounded" type="button" onclick="window.location.href='{{ route('registro') }}'">Crear cuenta</button>
-                        </div>
+                        
       
                       </form>
                       @if ($errors->any())

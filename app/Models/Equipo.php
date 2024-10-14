@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Support\Facades\DB;
 class Equipo extends Model
 {
     protected $primaryKey = 'idequipo';
@@ -22,5 +22,16 @@ class Equipo extends Model
         'almacenamiento',
         // Asegúrate de incluir todos los campos de tu tabla "equipos"
     ];
+
+    public static function obtenerEquiposPaginados($offset, $limit)
+    {
+        $results = DB::select('EXEC ObtenerRegistrosEquipos ?, ?', [$offset, $limit]);
+        return $results;
+    }
+
+    public static function contarTotalRegistros()
+    {
+        return DB::table('bitacoras')->count();
+    }
 
 }

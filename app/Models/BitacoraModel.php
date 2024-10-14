@@ -29,11 +29,15 @@ class BitacoraModel extends Model
 
     use HasFactory;
 
-    public static function obtenerRegistrosPaginados($offset, $limit)
-    {
-        $results = DB::select('EXEC ObtenerRegistrosBitacoras ?, ?', [$offset, $limit]);
-        return $results;
-    }
+    public static function obtenerRegistrosPaginados($offset, $limit, $order = 'desc')
+{
+    return DB::table('bitacoras')
+        ->select('fechasolicitud', 'idtecnico', 'responsable', 'falla', 'archivo')
+        ->orderBy('fechasolicitud', $order)
+        ->offset($offset)
+        ->limit($limit)
+        ->get();
+}
 
     public static function contarTotalRegistros()
     {

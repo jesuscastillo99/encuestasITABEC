@@ -214,3 +214,19 @@ button {
 .aspect-ratio-hd {
   aspect-ratio: 1;
 }
+
+/* CAMBIA EL DISEÑO DEL BOTON DE CERRAR SESION */
+.logout-button a {
+  background-color: rgba(235, 6, 6, 0.438); /* Rojo con 70% de opacidad */
+  color: #fff; /* Color del texto blanco */
+  padding: 8px 16px; /* Espaciado interno */
+  border-radius: 25px; /* Bordes redondeados */
+  transition: background-color 0.3s ease; /* Transición suave */
+  text-align: center; /* Alinear texto al centro */
+}
+
+.logout-button a:hover {
+  background-color: rgba(200, 35, 51, 0.7); /* Rojo más oscuro con 70% de opacidad al pasar el ratón */
+  color: #fff; /* Mantener el color del texto blanco al pasar el ratón */
+  text-decoration: none; /* Quitar subrayado */
+}
